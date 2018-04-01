@@ -29,3 +29,25 @@ Third, implement versions of the naive exact matching and Boyer-Moore algorithms
 For a few examples to help you test if your enhanced versions of the naive exact matching and Boyer-Moore algorithms are working properly, see these notebooks:
 Naive
 Boyer-Moore
+
+Week 3
+
+We saw how to adapt dynamic programming to find approximate occurrences of a pattern in a text. Recall that:
+
+Rows of the dynamic programming matrix are labeled with bases from P and columns with bases from T
+Elements in the first row are set to 0
+Elements in the first column are set to 0, 1, 2, ..., as for edit distance
+Other elements are set in the same way as elements of a standard edit distance matrix
+The minimal value in the bottom row is the edit distance of the closest match between P and T
+First, download the provided excerpt of human chromosome 1
+
+https://d28rh4a8wq0iu5.cloudfront.net/ads1/data/chr1.GRCh38.excerpt.fasta
+
+Second, parse it using the readGenome function we wrote before.
+
+Third, adapt the editDistance function we saw in practical (copied below) to answer questions 1 and 2 below. Your function should take arguments p (pattern), t (text) and should return the edit distance of the match between P and T with the fewest edits.
+
+
+
+Hint: In the "A new solution to approximate matching" video we saw that the best approximate match of P =GCGTATGCwithin T =TATTGGCTATACGGTThad 2 edits. You can use this and other small examples to double-check that your function is working.
+
